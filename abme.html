@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAEL</title>
+    
+    <!-- Използваме Tailwind CSS за бързо и адаптивно стилизиране -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Зареждане на елегантен шрифт за логото (Playfair Display) и модерен шрифт за текста (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#c8102e', // Красив, плътен червен цвят за марката
+                        brandDarkRed: '#8a1c2f',
+                    },
+                    fontFamily: {
+                        elegant: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Допълнителни стилове за плавни транзиции */
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        /* Клас, който ще се добавя чрез JavaScript при кликване */
+        .product-card.active {
+            border-color: #c8102e;
+            box-shadow: 0 10px 25px -5px rgba(200, 16, 46, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen">
+ <header class="w-full bg-white static top-0 z-50 shadow-sm"     >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center py-6">
+                <!-- Лого -->
+                <a href="Index.html" class="mb-6 inline-block">
+                    <h1 class="text-5xl md:text-6xl font-elegant font-bold text-brandRed tracking-widest text-center">
+                        MAEL
+                    </h1>
+                    <p class="text-sm tracking-widest text-gray-400 uppercase text-center mt-2">Авторски Сиропи</p>
+                </a>
+
+                <!-- Навигационно меню -->
+                <nav class="flex flex-wrap justify-center gap-2 md:gap-6 mt-2">
+                    <a href="Index.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">Начало</a>
+                    <a href="syrop.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">Нашите Сиропи</a>
+                    <a href="coffe.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">Кафе</a>
+                    <a href="abme.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">За нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim eget ante tincidunt lobortis vitae eget nisi. Donec nunc ipsum, cursus et varius sed, iaculis at mauris. Maecenas tristique dictum risus, sit amet accumsan quam ullamcorper id. In cursus vehicula ligula, eget consectetur nulla ultricies vel. Mauris commodo fringilla consectetur. In porta quam magna, eu ornare mi rhoncus at. Donec dictum, felis a pulvinar ornare, ligula elit mollis lorem, eget fermentum ante eros sed quam. Curabitur sit amet egestas nisl. Pellentesque in ipsum nec nibh efficitur mollis.
+
+Proin in velit ac nibh accumsan lacinia ac sit amet nibh. Etiam venenatis justo eu venenatis efficitur. Fusce ut aliquam felis. Nam eget ultricies dolor. Proin interdum nibh sed lectus pellentesque hendrerit. Nulla tincidunt, lectus id consequat finibus, enim dui suscipit leo, quis maximus nunc diam vel diam. Morbi vitae tristique magna. In rutrum dignissim fringilla. Proin blandit, massa vel laoreet ornare, enim augue bibendum ligula, a interdum quam libero ac purus. Donec rutrum ullamcorper velit.</h1>
+</body>

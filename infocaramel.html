@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Солен Карамел - MAEL Сиропи</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Шрифтове: Playfair Display (за елегантни заглавия) и Inter (за четлив текст) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#c8102e', // Основното червено на марката
+                        brandRedHover: '#a30c25' // По-тъмно червено за ховър ефекти
+                    },
+                    fontFamily: {
+                        elegant: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans min-h-screen flex flex-col selection:bg-brandRed selection:text-white">
+
+    <!-- Навигация -->
+    <header class="w-full bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <!-- Лого (води към началната страница) -->
+                <a href="index.html" class="flex-shrink-0">
+                    <h1 class="text-3xl font-elegant font-bold text-brandRed tracking-widest">MAEL</h1>
+                </a>
+
+                <!-- Меню -->
+                <nav class="flex gap-4 md:gap-8">
+                    <a href="index.html" class="text-gray-500 hover:text-brandRed transition-colors font-medium">← Назад към Начало</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основно съдържание на продукта -->
+    <main class="flex-grow flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                
+                <!-- Лява колона: Голяма снимка -->
+                <div class="relative w-full h-[50vh] lg:h-[75vh] bg-gray-50 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center group">
+                    <!-- Заместителната логика (onerror) гарантира, че ако снимката липсва, ще се покаже красив плейсхолдър -->
+                    <img src="solen.jpg" 
+                         alt="Сироп Солен Карамел MAEL" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x1200/f8fafc/c8102e?text=СОЛЕН+КАРАМЕЛ\nMAEL';"
+                         class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Дясна колона: Детайли и бутони -->
+                <div class="flex flex-col justify-center">
+                    
+                    <p class="text-brandRed font-medium tracking-widest uppercase text-sm mb-3">Авторски Сироп</p>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-elegant font-bold text-gray-900 mb-6 leading-tight">
+                        Солен <br/><span class="text-brandRed">Карамел</span>
+                    </h1>
+                    
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Изключително богат и плътен вкус, който съчетава сладостта на разтопен карамел с нежни нотки на фина морска сол. 
+                        Перфектното допълнение за вашето сутрешно лате, фрапе, изискан десерт или авторски коктейл. 
+                        Създаден с безкомпромисно внимание към детайла и само от висококачествени съставки.
+                    </p>
+                    
+                    <div class="text-4xl font-semibold text-gray-900 mb-2">
+                        10.00 €
+                    </div>
+                    <p class="text-gray-400 text-sm mb-10">Бутилка от 700 мл.</p>
+
+                    <!-- Бутони за поръчка -->
+                    <div class="flex flex-col sm:flex-row gap-4 w-full">
+                        
+                        <!-- Бутон: КУПИ -->
+                        <button onclick="showMessage('Пренасочване към плащане...')" class="flex-1 bg-brandRed text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-lg hover:bg-brandRedHover hover:shadow-brandRed/30 hover:-translate-y-1 transition-all duration-300 border-2 border-brandRed">
+                            Купи
+                        </button>
+                        
+                        <!-- Бутон: ДОБАВИ В КОЛИЧКАТА -->
+                        <button onclick="addToCart(this)" class="flex-1 bg-white text-brandRed font-semibold text-lg py-4 px-8 rounded-xl hover:bg-brandRed hover:text-white transition-all duration-300 border-2 border-brandRed flex justify-center items-center gap-2 group">
+                            <!-- Иконка количка -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span>Добави в количката</span>
+                        </button>
+                    </div>
+
+                    <!-- Съобщение за статус (скрито по подразбиране) -->
+                    <div id="status-message" class="mt-6 text-brandRed font-medium opacity-0 transition-opacity duration-300"></div>
+
+                    <!-- Детайли / Акордеон (Опционално, за повече лукс) -->
+                    <div class="mt-12 border-t border-gray-200 pt-6">
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><strong class="text-gray-700">Състав:</strong> Захар, вода, естествени аромати, морска сол.</li>
+                            <li><strong class="text-gray-700">Подходящ за:</strong> Кафе, мляко, сладолед, палачинки, коктейли.</li>
+                            <li><strong class="text-gray-700">Доставка:</strong> Бърза доставка до 24 часа.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Функция за визуална обратна връзка (вместо грозни alert прозорци)
+        function showMessage(text) {
+            const msgEl = document.getEl}

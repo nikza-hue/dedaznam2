@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAEL - Премиум Сиропи</title>
+    
+    <!-- Използваме Tailwind CSS за бързо и адаптивно стилизиране -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Зареждане на елегантен шрифт за логото (Playfair Display) и модерен шрифт за текста (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#c8102e', // Красив, плътен червен цвят за марката
+                        brandDarkRed: '#8a1c2f',
+                    },
+                    fontFamily: {
+                        elegant: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Допълнителни стилове за плавни транзиции */
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        /* Клас, който ще се добавя чрез JavaScript при кликване */
+        .product-card.active {
+            border-color: #c8102e;
+            box-shadow: 0 10px 25px -5px rgba(200, 16, 46, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen">
+    <header class="w-full bg-white static top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center py-6">
+                <!-- Лого -->
+                <a href="Index.html" class="mb-6 inline-block">
+                    <h1 class="text-5xl md:text-6xl font-elegant font-bold text-brandRed tracking-widest text-center">
+                        MAEL
+                    </h1>
+                    <p class="text-sm tracking-widest text-gray-400 uppercase text-center mt-2">Авторски Сиропи</p>
+                </a>
+
+                <!-- Навигационно меню -->
+                <nav class="flex flex-wrap justify-center gap-2 md:gap-6 mt-2">
+                    <a href="Index.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">Начало</a>
+                    <a href="syrop.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">Нашите Сиропи</a>
+                    <a href="coffe.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">Кафе</a>
+                    <a href="abme.html" class="nav-link px-4 py-2 rounded-md font-medium text-gray-700 transition-colors duration-300 hover:bg-brandRed hover:text-white focus:bg-brandRed focus:text-white focus:outline-none">За нас</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-5xl md:text-6xl font-elegant text-center text-gray-800 mb-12">Колекция Сиропи</h3>
+            <br>
+            <!-- Grid за продуктите -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Продукт 1: Солен карамел -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="solen.jpg" alt="Сироп Солен Карамел" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Солен+Карамел';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Солен Карамел</h4>
+                            <p class="text-sm text-gray-500 mb-4">Богат и плътен вкус със сладко-солен завършек.</p>
+                        </div>
+                       <a href="infocaramel.html"> <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                       </a>
+                    </div>
+                </div>
+            
+                <!-- Продукт 2: Мента -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="menta.jpg" alt="Сироп Мента" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Ментa</h4>
+                            <p class="text-sm text-gray-500 mb-4">Освежаващ и хладен, перфектен за летни коктейли и лимонади.</p>
+                        </div>
+                        <a href="infomenta.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Продукт 3: Тирамису -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="tiramisu.jpg" alt="Сироп Тирамису" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Тирамису</h4>
+                            <p class="text-sm text-gray-500 mb-4">Богатият вкус на любимия италиански десерт.</p>
+                        </div>
+                        <a href="infotiramisu.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+               <!-- Продукт 4: Лавандула -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="violet.jpg" alt="Сироп Лавандула" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Лавандула</h4>
+                            <p class="text-sm text-gray-500 mb-4">Нежно флорално докосване за изискани напитки.</p>
+                        </div>
+                        <a href="infoviolet.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                    <!-- Продукт 5: Канелени Ролца -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="rolca.jpg" alt="Сироп Канелени Ролца" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Канелени ролца</h4>
+                            <p class="text-sm text-gray-500 mb-4">Уютен аромат на току-що изпечена канела.</p>
+                        </div>
+                        <a href="inforolca.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                    <!-- Продукт 6: Бисквита -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="biscuit.jpg" alt="Сироп Бисквита" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Бисквита и карамел</h4>
+                            <p class="text-sm text-gray-500 mb-4">Уютен вкус на прясно изпечена маслена бисквитка с богат карамелен център.</p>
+                        </div>
+                        <a href="infobiscuit.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                    <!-- Продукт 7: Бял Шоколад -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="whitechoco.jpg" alt="Сироп Бял Шоколад" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Бял шоколад</h4>
+                            <p class="text-sm text-gray-500 mb-4">Нежна млечна сладост, която се топи във всяка глътка.</p>
+                        </div>
+                        <a href="infowhitechoco.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                                    <!-- Продукт 8: Еклер -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="ekler.jpg" alt="Сироп Бял Шоколад" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Еклер</h4>
+                            <p class="text-sm text-gray-500 mb-4">Сладък френски крем във всяка глътка.</p>
+                        </div>
+                        <a href="infoekler.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                                    <!-- Продукт 9: Череша -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="cherry.jpg" alt="Сироп Бял Шоколад" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Череша</h4>
+                            <p class="text-sm text-gray-500 mb-4">Лятна свежест със сладък черешов послевкус.</p>
+                        </div>
+                        <a href="infocherry.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                                    <!-- Продукт 10: Лимонов пай -->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="lemonpie.jpg" alt="Сироп Лемонов пай" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Лимонов пай</h4>
+                            <p class="text-sm text-gray-500 mb-4">Свеж цитрусов десерт във вашата чаша!</p>
+                        </div>
+                        <a href="infolemonpie.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+                                    <!-- Продукт 11: Банан с карамелизирснк орехи-->
+                <div class="product-card group bg-white border-[3px] border-transparent hover:border-brandRed rounded-xl overflow-hidden cursor-pointer flex flex-col" onclick="toggleActive(this)">
+                    <div class="relative w-full h-80 bg-gray-100 overflow-hidden">
+                        <img src="banana.jpg" alt="Сироп  Банан с карамелизирани орехи" onerror="this.onerror=null;this.src='https://placehold.co/400x500/f3f4f6/c8102e?text=Мента';" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-elegant font-bold text-gray-900 mb-2">Банан с карамелизирани орехи</h4>
+                            <p class="text-sm text-gray-500 mb-4"> Тропическа сладост с хрупкав карамелен завършек.</p>
+                        </div>
+                        <a href="infobanan.html">
+                        <span class="inline-block mt-auto text-brandRed font-medium hover:underline">Виж повече</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="mt-12 py-10 text-white" style="background: linear-gradient(to bottom, #9b2238, #6b0f1f);">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+
+        <!-- Logo in a cream card so the JPG background blends in -->
+        <div class="w-56 h-56 overflow-hidden rounded-xl shadow-lg">
+            <img src="logo.jpg" alt="MAEL - The Perfect Blend"
+                 class="w-full h-full object-cover object-center scale-[1.4]">
+        </div>
+
+        <p class="text-white/70 text-xs">&copy; 2026 MAEL Syrups. Всички права запазени.</p>
+    </div>
+</footer>
+</body>
